@@ -25,13 +25,14 @@ twitter = Twython(APP_KEY, APP_SECRET, ACCESS_TOKEN, ACCESS_SECRET)
 timeline = twitter.get_mentions_timeline(screen_name='techahoynyc', include_rts=False, since_id=last_id)
 
 for tweet in timeline:
-	tid = tweet['id']
-	#thex = tweet['text'].encode('ascii','ignore').hex()
-	ttext = tweet['text']
-	tuser = tweet['user']['name']
-	tdate = tweet['created_at']
-	#print('hex: ' + thex + 'user: ' + tuser + 'date: ' + tdate)
-	cur.execute("INSERT INTO tweets (id,text,screen_name,created_at) values(%s,%s,%s,%s) ON CONFLICT DO NOTHING", (tid,ttext,tuser,tdate))
+	if tweet['text'].find("#wegotthis"):
+		tid = tweet['id']
+		#thex = tweet['text'].encode('ascii','ignore').hex()
+		ttext = tweet['text']
+		tuser = tweet['user']['name']
+		tdate = tweet['created_at']
+		#print('hex: ' + thex + 'user: ' + tuser + 'date: ' + tdate)
+		cur.execute("INSERT INTO tweets (id,text,screen_name,created_at) values(%s,%s,%s,%s) ON CONFLICT DO NOTHING", (tid,ttext,tuser,tdate))
 conn.commit()
 
 # close
