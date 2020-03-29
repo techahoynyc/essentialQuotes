@@ -18,9 +18,11 @@ PW = config['sql']['PW']
 conn = psycopg2.connect(host=HOST,dbname=DB,port=PORT,user=UN,password=PW)
 cur = conn.cursor()
 
+last_id = cur.execute("SELECT max(id) from tweets")
+
 twitter = Twython(APP_KEY, APP_SECRET, ACCESS_TOKEN, ACCESS_SECRET)
 
-timeline = twitter.get_mentions_timeline(screen_name='techahoynyc', include_rts=False, count=1)
+timeline = twitter.get_mentions_timeline(screen_name='techahoynyc', include_rts=False, since_id=last_id)
 
 for tweet in timeline:
 	tid = tweet['id']
