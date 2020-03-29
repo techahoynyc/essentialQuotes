@@ -5,5 +5,5 @@ from windowDisplay import *
 wd = windowDisplay()
 wd.initiate()
 
-wd.set('test')
+wd.set('E=MC2 -Albert')
 wd.show()
