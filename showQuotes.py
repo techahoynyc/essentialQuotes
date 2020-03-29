@@ -24,7 +24,7 @@ while True:
 	cur.execute("SELECT * FROM tweets WHERE approved = true")
 	rows = cur.fetchall()
 	# show directions
-	wd.set("Send us a tweet @techahoynyc to show your Ridgewood support!")
+	wd.set("Send a tweet to @techahoynyc with #weheartrdgwd!")
 	wd.show()
 	# loop through tweets
 	for tweet in rows:
