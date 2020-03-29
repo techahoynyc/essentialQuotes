@@ -24,10 +24,11 @@ class windowDisplay(object):
 
     def show(self):
        pos = self.offscreen_canvas.width
+       vpos = self.offscreen_canvas.height / 2
        loops = 0
        while (loops < 2):
          self.offscreen_canvas.Clear()
-         mlen = graphics.DrawText(self.offscreen_canvas, self.font, pos, 10, self.textColor, self.msg) # lenght of msg
+         mlen = graphics.DrawText(self.offscreen_canvas, self.font, pos, vpos, self.textColor, self.msg) # lenght of msg
          pos -= 1
          if (pos + mlen < 0):
              pos = self.offscreen_canvas.width
