@@ -6,7 +6,7 @@ class windowDisplay(object):
     def __init__(self):
         self.options = RGBMatrixOptions()
         self.options.rows = 32
-        self.options.cols = 128
+        self.options.cols = 64
         self.options.chain_length = 4
         self.options.pwm_bits = 6
         self.options.pwm_lsb_nanoseconds = 300
