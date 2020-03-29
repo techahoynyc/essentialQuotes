@@ -24,7 +24,7 @@ class windowDisplay(object):
 
     def show(self):
        pos = self.offscreen_canvas.width
-       vpos = 25
+       vpos = 20
        loops = 0
        while (loops < 2):
          self.offscreen_canvas.Clear()
