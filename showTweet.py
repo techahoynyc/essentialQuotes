@@ -23,7 +23,8 @@ cur.execute("SELECT * FROM tweets WHERE approved = true")
 rows = cur.fetchall()
 
 for tweet in rows:
-	msg = bytes.fromhex(tweet[0]).decode()
+	msg = tweet[0]
+	print(msg) #debug
 	wd.set(msg)
 	wd.show()
 
