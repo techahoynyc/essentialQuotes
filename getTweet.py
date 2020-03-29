@@ -25,7 +25,7 @@ twitter = Twython(APP_KEY, APP_SECRET, ACCESS_TOKEN, ACCESS_SECRET)
 timeline = twitter.get_mentions_timeline(screen_name='techahoynyc', include_rts=False, since_id=last_id)
 
 for tweet in timeline:
-	if tweet['text'].find("#wegotthis"):
+	if(tweet['text'].find("#wegotthis") > 1):
 		tid = tweet['id']
 		#thex = tweet['text'].encode('ascii','ignore').hex()
 		ttext = tweet['text']
