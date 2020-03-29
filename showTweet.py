@@ -19,14 +19,19 @@ wd.initiate()
 conn = psycopg2.connect(host=HOST,dbname=DB,port=PORT,user=UN,password=PW)
 cur = conn.cursor()
 
-cur.execute("SELECT * FROM tweets WHERE approved = true")
-rows = cur.fetchall()
-
-for tweet in rows:
-	msg = tweet[0]
-	print(msg) #debug
-	wd.set(msg)
+while True:
+	# get list of tweets
+	cur.execute("SELECT * FROM tweets WHERE approved = true")
+	rows = cur.fetchall()
+	# show directions
+	wd.set("Send us a tweet @techahoynyc to show your support. -- https://techahoy.org/we-got-this")
 	wd.show()
+	# loop through tweets
+	for tweet in rows:
+		msg = tweet[0]
+		print(msg) #debug
+		wd.set(msg)
+		wd.show()
 
 # close
 cur.close()
