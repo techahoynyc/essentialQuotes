@@ -20,8 +20,8 @@ git submodule update --init --recursive
 ```
 
 ## Files
-* **README.md**: This file.
-* **getTweets.py**: 
-* **showQuotes.py**:
-* **showTestQuote.py**:
-* **windowDisplay.py**:
+* **README.md**: This file
+* **getTweets.py**: Checks your mentions timeline for tweets with the correct hashtag
+* **showQuotes.py**: Grabs the recorded tweets and displays them
+* **showTestQuote.py**: Shows a test quote
+* **windowDisplay.py**: The class file for the matrix display
