@@ -8,9 +8,10 @@ You can read more about the project on Hackster.io.
 ## Requirements
 * hzeller's great [rpi-rgb-led-matrix repo](https://github.com/hzeller/rpi-rgb-led-matrix)
 * Postgres back-end DATABASE_NAME
+* Twitter App
 
 ## Installation
-This repository uses submodules so you'll need to clone with:
+1. This repository uses submodules so you'll need to clone with:
 ```
 git clone --recursive https://github.com/techahoynyc/essentialQuotes
 ```
@@ -18,6 +19,24 @@ If you didn't use the `--recursive` argument you can pull down the [rpi-rgb-led-
 ```
 git submodule update --init --recursive
 ```
+1. Create the `config.ini` file with the following format:
+```
+[twitter]
+TW_NAME = <your twitter screen name>
+TW_HASH = <your designed hash tag including # symbol>
+APP_KEY = <your twitter app API Key>
+APP_SECRET = <your twitter app API Secret>
+ACCESS_TOKEN = <your twitter app Access Token>
+ACCESS_SECRET = <your twitter app Access Secret>
+[sql]
+HOST = <your PSQL DB hostname>
+DB = <your PSQL DB name>
+PORT = 5432 <or your custom PSQL DB port>
+UN = <your PSQL DB username>
+PW = <your PSQL DB user's password>
+```  
+1.
+
 
 ## Files
 * **README.md**: This file

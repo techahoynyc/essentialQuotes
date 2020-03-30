@@ -7,6 +7,7 @@ from windowDisplay import *
 config = configparser.ConfigParser()
 config.read('config.ini')
 
+DEFAULT_MSG = config['general']['DEFAULT_MSG']
 HOST = config['sql']['HOST']
 DB = config['sql']['DB']
 PORT = config['sql']['PORT']
@@ -24,7 +25,7 @@ while True:
 	cur.execute("SELECT * FROM tweets WHERE approved = true")
 	rows = cur.fetchall()
 	# show directions
-	wd.set("Send a tweet to @techahoynyc with #weheartrdgwd!")
+	wd.set(DEFAULT_MSG)
 	wd.show()
 	# loop through tweets
 	for tweet in rows:

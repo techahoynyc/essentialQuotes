@@ -5,6 +5,8 @@ from twython import Twython
 config = configparser.ConfigParser()
 config.read('config.ini')
 
+TW_NAME = config['twitter']['TW_NAME']
+TW_HASH = config['twitter']['TW_HASH']
 APP_KEY = config['twitter']['APP_KEY']
 APP_SECRET = config['twitter']['APP_SECRET']
 ACCESS_TOKEN = config['twitter']['ACCESS_TOKEN']
@@ -22,11 +24,11 @@ last_id = cur.execute("SELECT max(id) from tweets")
 
 twitter = Twython(APP_KEY, APP_SECRET, ACCESS_TOKEN, ACCESS_SECRET)
 
-timeline = twitter.get_mentions_timeline(screen_name='techahoynyc', include_rts=False, since_id=last_id)
+timeline = twitter.get_mentions_timeline(screen_name=TW_NAME, include_rts=False, since_id=last_id)
 
 for tweet in timeline:
 	#print(tweet) #debug
-	if(tweet['text'].find("#weheartrdgwd") > 1):
+	if(tweet['text'].find(TW_HASH) > 1):
 		tid = tweet['id']
 		#thex = tweet['text'].encode('ascii','ignore').hex()
 		ttext = tweet['text']
