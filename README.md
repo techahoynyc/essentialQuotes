@@ -34,6 +34,8 @@ DB = <your PSQL DB name>
 PORT = 5432 <or your custom PSQL DB port>
 UN = <your PSQL DB username>
 PW = <your PSQL DB user's password>
+[general]
+DEFAULT_MSG = <your default message or instructions>
 ```  
 1.
 

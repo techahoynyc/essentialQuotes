@@ -30,7 +30,7 @@ while True:
 	# loop through tweets
 	for tweet in rows:
 		msg = tweet[0]
-		print(msg) #debug
+		#print(msg) #debug
 		wd.set(msg)
 		wd.show()
 
