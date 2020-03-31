@@ -3,7 +3,9 @@
 ## Description
 During difficult and uncertain times, messages of hope, strength, and encouragement can have a meaningful impact. EssentialQuotes is a project designed to capture outpouring of community support from tweets and simple messages. Received messages are displayed on a chain of 64x32 RGB matrixes.
 
-You can read more about the project on Hackster.io.  
+You can read more about the project on [Hackster.io](https://www.hackster.io/techahoynyc/essentialquotes-42cdc8)!  
+
+*If you want to show your support for our community send a tweet to @techahoynyc with #weheartrdgwd or visit https://techahoy.org/we-heart-rdgwd to message us through our website.*
 
 ## Requirements
 * hzeller's great [rpi-rgb-led-matrix repo](https://github.com/hzeller/rpi-rgb-led-matrix)
